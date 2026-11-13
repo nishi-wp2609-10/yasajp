@@ -18,7 +18,7 @@
     // 【出力例】
     // こんにちは！
     // こんにちは！
-    function hello () {
+    function hello() {
       console.log('こんにちは！');
     }
     hello();
@@ -29,7 +29,11 @@
     // 【出力例】
     // りんごは120円です
     // バナナは80円です
-
+    function showPrice(itemNeme, itemPrice) {
+      console.log(`${itemNeme}は${itemPrice}円です`);
+    }
+    showPrice('りんご', 120)
+    showPrice('バナナ', 80)
 
     // 問3 戻り値
     // 縦と横の長さを受け取り、長方形の面積を返す関数 getArea() を定義してください。
@@ -37,7 +41,17 @@
     // 【出力例】
     // 縦4、横5の長方形の面積は20です
     // 縦3、横7の長方形の面積は21です
+    function getArea(height, width) {
+      let area = height * width;
+      return area;
+      // return height * width
+    }
 
+    let area = getArea(4, 5);
+    console.log(`縦4、横5の長方形の面積は${area}です`);
+
+    console.log(`縦4、横5の長方形の面積は${getArea(4, 5)}です`);
+    console.log(`縦3、横7の長方形の面積は${getArea(3, 7)}です`);
 
     // 問4 デフォルト引数
     // 名前を受け取り、「こんにちは、〇〇さん」と出力する関数 greet() を定義してください。
@@ -45,7 +59,12 @@
     // 【出力例】
     // こんにちは、田中さん
     // こんにちは、ゲストさん
+    function greet(name = 'ゲスト') {
+      console.log(`こんにちは${name}さん`);
+    }
 
+    greet('田中');
+    greet();
 
     // 問5 まとめ
     // 値段と個数を受け取り、合計金額を返す関数 getTotal() を定義してください。
@@ -54,6 +73,13 @@
     // 【出力例】
     // 合計は360円です
     // 合計は80円です
+
+    function getTotal(price,amount=1){
+      return price * amount;
+    }
+
+console.log(`合計は${getTotal(120,3)}円です`);
+console.log(`合計は${getTotal(80)}`);
 
   </script>
 </body>
